@@ -46,7 +46,7 @@ int video_display(int cpuid, int video_index, int crtc_index, int plane_index, u
     dequeue.type = V4L2_BUF_TYPE_VIDEO_CAPTURE ;
     dequeue.memory = V4L2_MEMORY_MMAP ;
     BUF *buffer ;
-    buffer = (BUF *)malloc(COUNT*(sizeof (BUF)));
+    buffer = (BUF *)malloc(1*(sizeof (BUF)));
 
     char video[25];
     snprintf(video, sizeof(video), "/dev/video%d", video_index);
