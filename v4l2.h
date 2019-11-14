@@ -11,14 +11,14 @@
 #define  IMAGE_HEIGHT   480
 #define  COUNT  4
 
-#define CHANNEL 4
+#define CHANNEL 3
 #define BUFFER_SIZE_src IMAGE_WIDTH*IMAGE_HEIGHT*2
 #define BUFFER_SIZE_det IMAGE_WIDTH*IMAGE_HEIGHT*CHANNEL
 
 typedef struct buffer
 {
     int fd;
-    void * start;
+    void * start[COUNT];
 } BUF ;
 
 extern "C"
