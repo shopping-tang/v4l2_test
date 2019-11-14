@@ -238,7 +238,7 @@ BUF *v4l2(char *FILE_VIDEO, BUF *buffers)
         }
     //queue
         ioctl(buffers[0].fd, VIDIOC_QBUF, &buf) ;
-        printf("buf.length = %d\n",buf.length);
+        //printf("buf.length = %d\n",buf.length);
     }
     /***************************************************/
 
