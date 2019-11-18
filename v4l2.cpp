@@ -105,7 +105,7 @@ void yuyv2bgra32(unsigned char*yuyv, unsigned char*bgra)
     }
 }
 
-BUF *v4l2(char *FILE_VIDEO, BUF *buffers)
+int v4l2(char *FILE_VIDEO, BUF *buffers)
 {
     int i;
     int ret = 0;
@@ -245,7 +245,7 @@ BUF *v4l2(char *FILE_VIDEO, BUF *buffers)
     int type = 1;
     ioctl (buffers->fd, VIDIOC_STREAMON, &type) ;
 
-    return buffers ;
+    return 1 ;
 }
 
 unsigned char *get_img(struct v4l2_buffer dequeue,BUF *buffers,unsigned char *srcBuffer)
