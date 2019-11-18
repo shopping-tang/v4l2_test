@@ -68,6 +68,7 @@ int video_display(int cpuid, int video_index, int crtc_index, int plane_index, u
     int erro = v4l2(video,buffer) ;
     if (erro == 0){
         printf("v4l2 run erro .\n");
+        return 0 ;
     }
     /************************* DRM function *************************/
     printf("***** drm function start *****\n");
