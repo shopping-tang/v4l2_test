@@ -25,7 +25,7 @@ extern "C"
 {
     void yuyv2bgr24(unsigned char*yuyv, unsigned char*rgb);
     void yuyv2bgra32(unsigned char*yuyv, unsigned char*bgra);
-    BUF *v4l2(char *FILE_VIDEO, BUF *buffers);
+    int v4l2(char *FILE_VIDEO, BUF *buffers);
     unsigned char *get_img(struct v4l2_buffer dequeue,BUF *buffers,unsigned char *srcBuffer);
     int close_v4l2(BUF *buffers);
 
