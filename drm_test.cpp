@@ -65,7 +65,10 @@ int video_display(int cpuid, int video_index, int crtc_index, int plane_index, u
     uint32_t frame_depth = 16, frame_bpp = 24 ;
     /************************* V4L2 function *************************/
     printf("***** v4l2 function start *****\n");
-    buffer = v4l2(video,buffer) ;
+    int erro = v4l2(video,buffer) ;
+    if (erro == 0){
+        printf("v4l2 run erro .\n");
+    }
     /************************* DRM function *************************/
     printf("***** drm function start *****\n");
     dev = create_sp_dev(card, video_format);
@@ -150,6 +153,7 @@ int video_display(int cpuid, int video_index, int crtc_index, int plane_index, u
     return(TRUE);
 }
 
+#if 1
 int main()    
 {
     signal(SIGINT, sigint_handler);
@@ -162,3 +166,13 @@ int main()
     }
     return(TRUE);
 }
+#else
+int main()    
+{
+    signal(SIGINT, sigint_handler);
+    
+    video_display(0, 10, 0, 0, 128, 0, 1280, 960);
+               
+    return(TRUE);
+}
+#endif
